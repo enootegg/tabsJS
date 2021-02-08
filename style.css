@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #333;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 16px;
+}
+
+.wrapper {
+	min-height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    padding: 50px 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tabs-nav {
+	display: flex;
+}
+.tabs-nav__item {
+	flex: 0 1 33.333%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+}
+
+.tabs-nav__item span {
+    position: relative;
+    z-index: 2;
+}
+
+.tabs-nav__item.is-active {
+	border-color: #55a32a;
+}
+
+.tab {
+	position: relative;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 24px;
+    /* display: none; */
+
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s linear;
+}
+
+.tab::before {
+    content: "";
+    height: 50px;
+    width: 33.333%;
+    position: absolute;
+    top: -50px;
+}
+
+.tab:nth-child(1) {
+    background-color: #eb8698;
+}
+
+.tab:nth-child(1)::before {
+    background-color: #eb8698;
+    left: 0;
+}
+
+.tab:nth-child(2) {
+    background-color: #9278aa;
+}
+
+.tab:nth-child(2)::before {
+    background-color: #9278aa;
+    left: 33.333%;
+}
+
+.tab:nth-child(3) {
+    background-color: #97c67d;
+}
+
+.tab:nth-child(3)::before {
+    background-color: #97c67d;
+    right: 0;
+}
+
+.text {
+    padding: 20px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.tab.is-active {
+    /* display: block; */
+
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+@media (max-width: 600px){
+    .tabs-nav__item span {
+        display: block;
+        width: 100px;
+        padding: 0 5px;
+        white-space: nowrap;
+        text-align: center;
+        overflow: hidden;
+        font-size: 14px;
+        text-overflow: ellipsis;
+    }
+}
